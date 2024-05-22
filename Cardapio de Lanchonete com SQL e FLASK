@@ -1,0 +1,2 @@
+Neste arquivo, desenvolvi um sistema de cardápio utilizando Python, SQL, HTML, CSS e JavaScript. Este projeto foi criado com o objetivo de aprofundar meus conhecimentos em SQL e desenvolvimento back-end. O HTML foi estruturado de forma que, ao adicionar um novo item ao cardápio, o site se ajuste automaticamente para refletir a quantidade de itens presentes no banco de dados.
+

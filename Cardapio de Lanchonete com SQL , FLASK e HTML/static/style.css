@@ -1,0 +1,190 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Body styles */
+body {
+
+  background-color: #ccb90fef;
+}
+
+/* Button styles */
+.btnOpenModal {
+  background: linear-gradient(to bottom right, #fd3d0d, #ffd207);
+  border: 5;
+  border-radius: 55px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  margin: 4px 4px;
+  width: 250px;
+  /* Define a largura fixa */
+  height: 140px;
+  /* Define a altura fixa */
+
+}
+
+.btnOpenModal:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.884), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.btnOpenModal:hover {
+  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .btnOpenModal {
+    padding: 16px 48px;
+  }
+}
+
+/* Responsive layout for buttons */
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow buttons to wrap onto new lines */
+  justify-content: center;
+  /* Distribute buttons evenly horizontally */
+}
+
+.modal-container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  text-align: center;
+  /* Alinha o conteúdo no centro */
+}
+
+.modal img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  display: block;
+  /* Para garantir que o centro funcione corretamente */
+  margin: 0 auto;
+  /* Centraliza horizontalmente */
+}
+
+.modal {
+  animation: modal 1.2s;
+  /* Animation duration adjusted to 0.4s */
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -60px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+.btns button {
+  font-size: medium;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.btnOK {
+  background-color: blue !important;
+}
+
+
+/* Responsive adjustments for smaller screens (unchanged) */
+@media (max-width: 500px) {
+  .modal {
+    padding: 10px;
+    width: 8
+  }
+}
+/* Estilo para o select */
+select {
+  background-color: #fd3d0d; /* Torna o fundo transparente */
+  border: 2px solid #424242; /* Adiciona uma borda */
+  border-radius: 20px; /* Arredonda as bordas */
+  color: #ffffff; /* Cor do texto */
+  cursor: pointer; /* Cursor de seleção */
+  font-size: 18px; /* Tamanho da fonte */
+  padding: 10px; /* Espaçamento interno */
+  margin-bottom: 20px; /* Espaçamento inferior */
+  appearance: none; /* Remove o estilo padrão do sistema */
+  margin-bottom: 20px; /* MUDAR DEPENDENDO DA RESOLUÇÃO!!!!!!!!!!!*/
+}
+form {
+  margin-top: 20px; /* Adiciona margem superior para movê-lo para cima */
+}
+
+/* Estilizando as opções do select */
+select option {
+  background-color: #f77d2dde; /* Cor de fundo */
+  color: #333; /* Cor do texto */
+}
+
+/* Estilo para quando o select está focado */
+select:focus {
+  outline: none; /* Remove o contorno ao focar */
+  border-color: #ffe600; /* Cor da borda ao focar */
+}
+
+/* Estilos para a barra superior */
+.top-bar {
+  border-color: #ffd207;
+  border: 2px solid #ff8a04;
+  background: linear-gradient(to bottom right, #fd3d0d, #ffd207); /* Cor de fundo laranja */
+  color: #fff; /* Cor do texto branco */
+  padding: 10px; /* Espaçamento interno */
+  text-align: center; /* Alinhamento centralizado do texto */
+  width: 100%; /* Garante que a barra ocupe toda a largura da página */
+}
+
+.top-bar .container {
+  display: flex; /* Utiliza flexbox para alinhar o conteúdo */
+  align-items: center; /* Centraliza verticalmente o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente o conteúdo */
+}
+
+.top-bar .logo img {
+  height: 120px; /* Altura da imagem do logo */
+  width: auto; /* Largura automática para manter a proporção */
+  margin-right: 20px; /* Adiciona margem à direita para separar o logo do texto */
+}

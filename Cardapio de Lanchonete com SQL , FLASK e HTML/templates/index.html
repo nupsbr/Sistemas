@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal</title>
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+  <div class="top-bar">
+    <div class="logo">
+      <img src="data:image/jpeg;base64,{{ lanches[0][3] }}" alt="Logo">
+    </div>
+    <h1>PAULADA LANCHES</h1>
+  
+  <form action="/" method="GET">
+    <select name="lanche_id" onchange="this.form.submit()">
+      <option value="">Selecione um lanche...</option>
+      {% for lanche in lanches %}
+        <option value="{{ lanche[0] }}" {% if lanche[0] == lanche_id %}selected{% endif %}>{{ lanche[0] }}</option>
+      {% endfor %}
+    </select>
+  </form>
+</div>
+  <div class="buttons-container">
+    {% for i, lanche in enumerate(lanches) %}
+      <button class="btnOpenModal" onclick="openModal('{{ lanche[0] }}')">{{ lanche[0] }}</button>
+    {% endfor %}
+  </div>
+
+  {% for lanche in lanches %}
+    <div class="modal-container" id="modal{{ lanche[0] }}">
+      <div class="modal">
+        <h2>{{ lanche[0] }}</h2>
+        <hr />
+        <span>
+          <img src="data:image/jpeg;base64,{{ lanche[2] }}" alt="Imagem">
+          <p>{{ lanche[1] }}</p>
+        </span>
+        <hr />
+        <div class="btns">
+          <button class="btnOK" onclick="closeModal()">OK</button>
+          <button class="btnClose" onclick="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+
+  <script src="../static/script.js"></script>
+  <script>
+    function openModal(id) {
+      document.getElementById('modal' + id).style.display = 'block';
+    }
+
+    function closeModal() {
+      var modals = document.getElementsByClassName('modal-container');
+      for (var i = 0; i < modals.length; i++) {
+        modals[i].style.display = 'none';
+      }
+    }
+
+    // Abrir o modal automaticamente se um lanche for selecionado
+    {% if lanche_id %}
+      openModal('{{ lanche_id }}');
+    {% endif %}
+  </script>
+</body>
+</html>
